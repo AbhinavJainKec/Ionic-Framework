@@ -26,7 +26,7 @@ export class ReservationPage {
       this.reservation = this.formBuilder.group({
         guests: 3,
         smoking: false,
-        dateTime: ['', Validators.required],
+        dateTime: ['', Validators.required]
       });
   }
 

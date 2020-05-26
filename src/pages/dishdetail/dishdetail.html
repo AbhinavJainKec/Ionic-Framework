@@ -8,6 +8,11 @@
 
   <ion-navbar color="primary">
     <ion-title>Dish Details</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="openActionSheet()">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -59,6 +64,13 @@
         <span> -- {{comment.author}} {{comment.date | date }} </span>
       </p>
     </ion-item>
+    <ion-item *ngIf="commentForm" text-wrap>
+      <h4> {{commentForm.value.comment}} </h4>
+      <p> {{commentForm.value.rating}} Stars</p>
+      <p>
+        <span> -- {{commentForm.value.author}} {{commentForm.value.date | date }} </span>
+      </p>
+    </ion-item>
   </ion-list>
 
   <ion-fab bottom right [hidden]="favorite">
@@ -67,7 +79,7 @@
     </button>
   </ion-fab>
   <ion-fab bottom right *ngIf="favorite">
-    <button ion-fab>
+    <button ion-fab (click)="addToFavorites()">
       <ion-icon name="heart"></ion-icon>
     </button>
   </ion-fab>
