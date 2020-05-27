@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
-import { Camera, CameraOptions } from '@ionic-native/camera';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx/index';
 
 /**
  * Generated class for the RegisterPage page.
@@ -70,6 +70,25 @@ export class RegisterPage {
     console.log(this.registerForm.value);
     this.dismiss();
   }
-}
 
+  openGallery () {
+    let gallaryoption = {
+      sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
+      destinationType: this.camera.DestinationType.FILE_URI,      
+      quality: 100,
+      targetWidth: 1000,
+      targetHeight: 1000,
+      encodingType: this.camera.EncodingType.JPEG,      
+      correctOrientation: true
+    }
+    this.camera.getPicture(gallaryoption)
+    .then((imageData) => {
+
+      this.image = imageData;
+      console.log(imageData);
+    }, (err) => {
+        console.log('Error obtaining picture')
+    });
+  }
+  
 }

@@ -3,7 +3,6 @@ import { HttpModule } from '@angular/http';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { IonicStorageModule } from '@ionic/storage';
-import { Camera } from '@ionic-native/camera';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -17,10 +16,12 @@ import { CommentPage } from '../pages/comment/comment';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 
-import { LocalNotifications } from '@ionic-native/local-notifications';
-import { EmailComposer } from '@ionic-native/email-composer';
-import { SocialSharing } from '@ionic-native/social-sharing';
-import { Network } from '@ionic-native/network';
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx/index';
+import { EmailComposer } from '@ionic-native/email-composer/ngx/index';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx/index';
+import { Network } from '@ionic-native/network/ngx/index';
+import { Camera } from '@ionic-native/camera/ngx/index';
+import { CallNumber } from '@ionic-native/call-number/ngx/index';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -78,6 +79,7 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
     Camera,
     SocialSharing,
     Network,
+    CallNumber,
     PromotionProvider,
     ProcessHttpmsgProvider,
     { provide: 'BaseURL', useValue: baseURL },

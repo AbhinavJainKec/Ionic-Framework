@@ -13,41 +13,36 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="card-background-image">
   <ion-card>
+    <ion-card-header color="primary">
+      Location Information
+    </ion-card-header>
     <ion-card-content>
-      <ion-card-title  color="primary">
-        <h2>Location Information</h2>
-      </ion-card-title>
-      <p>121, Clear Water Bay Road</p>
-      <p>Clear Water Bay, Kowloon</p>
-      <p>HONG KONG</p>
+      <address>
+        121, Clear Water Bay Road<br>
+        Clear Water Bay, Kowloon<br>
+        HONG KONG<br>
+        <ion-icon name="call"></ion-icon>: +852 1234 5678<br>
+        <ion-icon name="print"></ion-icon>: +852 8765 4321<br>
+        <ion-icon name="mail"></ion-icon>:
+          <a href="mailto:confusion@food.net">confusion@food.net</a>
+      </address>
+      <p></p>
       <ion-row>
-        <ion-icon name="call"></ion-icon>
-        <div>: +852 1234 5678</div>
-      </ion-row>
-      <ion-row>
-        <ion-icon name="print"></ion-icon>
-        <div>: +852 8765 4321</div>
-      </ion-row>
-      <ion-row>
-        <ion-icon name="mail"></ion-icon>
-        <div>:confusion@food.net</div>
+        <ion-col>
+          <button ion-button icon-left clear small (click)="callnumber()">
+            <ion-icon name="call"></ion-icon>
+            <div>CALL</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-left clear small (click)="sendEmail()">
+            <ion-icon name="mail"></ion-icon>
+            <div>EMAIL</div>
+          </button>
+        </ion-col>
       </ion-row>
     </ion-card-content>
-    <ion-row>
-      <ion-col>
-        <button ion-button icon-left clear small>
-          <ion-icon name="call"></ion-icon>
-          <div>CALL</div>
-        </button>
-      </ion-col>
-      <ion-col>
-        <button ion-button icon-left clear small (click)="sendEmail()">
-          <ion-icon name="mail"></ion-icon>
-          <div>EMAIL</div>
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-card>
+  </ion-card>  
 </ion-content>

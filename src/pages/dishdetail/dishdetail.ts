@@ -4,7 +4,7 @@ import { Dish } from '../../shared/dish';
 import { Comment } from '../../shared/comment';
 import { FavoriteProvider } from '../../providers/favorite/favorite';
 import { CommentPage } from '../comment/comment';
-import { SocialSharing } from '@ionic-native/social-sharing';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx/index';
 
 /**
  * Generated class for the DishdetailPage page.
@@ -79,7 +79,7 @@ export class DishdetailPage {
           handler: () => {
             console.log('Action Cancelled');
           }
-        }
+        },
         {
           text: 'Share via Facebook',
           handler: () => {
