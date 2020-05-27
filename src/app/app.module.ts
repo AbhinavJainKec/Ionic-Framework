@@ -20,6 +20,7 @@ import { RegisterPage } from '../pages/register/register';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { EmailComposer } from '@ionic-native/email-composer';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { Network } from '@ionic-native/network';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -76,6 +77,7 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
     EmailComposer,
     Camera,
     SocialSharing,
+    Network,
     PromotionProvider,
     ProcessHttpmsgProvider,
     { provide: 'BaseURL', useValue: baseURL },
